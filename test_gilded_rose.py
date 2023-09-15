@@ -71,17 +71,17 @@ class GildedRoseTest(unittest.TestCase):
         self.assertEqual(80, items[0].quality)
         self.assertEqual(5, items[0].sell_in)
 
-    # def test_conjured_item_go_twice_as_fast_before_sell_in(self):
-    #     items = [Item("Conjured Mana Cake", 5, 20)]
-    #     gilded_rose = GildedRose(items)
-    #     gilded_rose.update_quality()
-    #     self.assertEqual(18, items[0].quality)
-    #
-    # def test_conjured_item_go_twice_as_fast_after_sell_in(self):
-    #     items = [Item("Conjured Mana Cake", 0, 20)]
-    #     gilded_rose = GildedRose(items)
-    #     gilded_rose.update_quality()
-    #     self.assertEqual(16, items[0].quality)
+    def test_conjured_item_go_twice_as_fast_before_sell_in(self):
+        items = [Item("Conjured Mana Cake", 5, 20)]
+        gilded_rose = GildedRose(items)
+        gilded_rose.update_quality()
+        self.assertEqual(18, items[0].quality)
+    
+    def test_conjured_item_go_twice_as_fast_after_sell_in(self):
+        items = [Item("Conjured Mana Cake", 0, 20)]
+        gilded_rose = GildedRose(items)
+        gilded_rose.update_quality()
+        self.assertEqual(16, items[0].quality)
 
 if __name__ == '__main__':
     unittest.main()
